@@ -10,7 +10,7 @@ nameGenButton.addEventListener("click", function(){
 });
 
 lastFiveBtn.addEventListener("Click", function(){
-  GetFavorites();
+  getLocalStorageData();
 })
 
 async function AsyncGetData(){
@@ -27,6 +27,16 @@ function NameGenerator() {
   console.log(random);
   saveToLocalStorageByName(studentnames.studentNames[random].Name) 
 }
+
+function getLocalStorageData(){
+  if (localStorage.getItem('Favorites' != null))
+  {
+    document.getElementById('stored').innerHTML = JSON.parse(localStorage.getItem('Favorites'))
+  }
+
+}
+
+
 
 
 
